@@ -13,7 +13,14 @@ public class Arrow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Destroy(GameObject.FindGameObjectWithTag("Circle"));
-        Destroy(GameObject.FindGameObjectWithTag("Arrow"));
+        if (col.gameObject.tag == "Green")
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Circle"));
+            Destroy(GameObject.FindGameObjectWithTag("Green arrow"));
+        }
+        else
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Green arrow"));
+        }
     }
 }
