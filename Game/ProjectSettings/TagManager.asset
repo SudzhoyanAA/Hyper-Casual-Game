@@ -48,3 +48,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Circle
+    uniqueID: 1786208513
+    locked: 0
