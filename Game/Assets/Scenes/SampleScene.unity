@@ -10628,7 +10628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 0.1
   arrowPrefab: {fileID: 8427997408139554530, guid: 47128ed643a0d3949a8272d2a8d6e6e2, type: 3}
-  repeat_time: 1
+  repeat_time: 3
 --- !u!4 &1192347899
 Transform:
   m_ObjectHideFlags: 0
