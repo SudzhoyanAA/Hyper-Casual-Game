@@ -8,7 +8,7 @@ public class Arrow : MonoBehaviour
     {
         if (col.gameObject.tag == "Green")
         {
-            Destroy(GameObject.FindGameObjectWithTag("Circle"));
+            Destroy(col.transform.parent.gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Green arrow"));
         }
         else

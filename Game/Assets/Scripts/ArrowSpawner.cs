@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ArrowSpawner : MonoBehaviour
 {
-    public float force;
+    //public float force;
     public GameObject arrowPrefab;
     GameObject arrow;
 
     public float repeat_time;
     private float curr_time;
 
+    public float speed;
 
     void Start()
     {
@@ -30,10 +31,10 @@ public class ArrowSpawner : MonoBehaviour
 
         if (GameObject.FindGameObjectWithTag("Green arrow") != null)
         {
-            arrow.transform.parent = null;
-            arrow.GetComponent<Rigidbody2D>().AddForce(Vector2.up * force, ForceMode2D.Impulse);
+            //arrow.transform.parent = null;
+            //arrow.GetComponent<Rigidbody2D>().AddForce(Vector2.up * force, ForceMode2D.Impulse);
+            arrow.GetComponent<Rigidbody2D>().velocity = new Vector3(-12, 5, 0) * speed;
         }
-
     }
 }
 
