@@ -5,12 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Green
-  - Circle
   - Arrow
   - Red
   - Purple
   - Orange
   - Green arrow
+  - Red arrow
+  - Purple arrow
+  - Orange arrow
   layers:
   - Default
   - TransparentFX
@@ -47,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Circle
+    uniqueID: 1786208513
     locked: 0
