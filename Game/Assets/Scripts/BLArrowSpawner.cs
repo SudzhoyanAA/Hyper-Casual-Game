@@ -29,7 +29,7 @@ public class BLArrowSpawner : MonoBehaviour
             timer = 0;
         }
         //Движение стрелки
-        if (GameObject.FindGameObjectWithTag("Green arrow") != null)
+        if (arrow != null)
         {
             arrow.GetComponent<Rigidbody2D>().velocity = new Vector3(Screen.width / 2, Screen.height / 2, 0) * speed;
         }
