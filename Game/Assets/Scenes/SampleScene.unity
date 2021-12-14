@@ -1913,6 +1913,10 @@ MonoBehaviour:
   start_delay: 6
   timing: 8
   speed: 0.008
+  greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
+  redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
+  purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}
+  orangeMaterialRef: {fileID: 2100000, guid: f825344ca730ef24fa7141ff4025406a, type: 2}
 --- !u!212 &159542864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3573,6 +3577,10 @@ MonoBehaviour:
   start_delay: 0
   timing: 8
   speed: 0.008
+  greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
+  redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
+  purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}
+  orangeMaterialRef: {fileID: 2100000, guid: f825344ca730ef24fa7141ff4025406a, type: 2}
 --- !u!212 &438057285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9748,6 +9756,10 @@ MonoBehaviour:
   start_delay: 4
   timing: 8
   speed: 0.008
+  greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
+  redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
+  purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}
+  orangeMaterialRef: {fileID: 2100000, guid: f825344ca730ef24fa7141ff4025406a, type: 2}
 --- !u!212 &1103763129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10987,6 +10999,10 @@ MonoBehaviour:
   start_delay: 2
   timing: 8
   speed: 0.008
+  greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
+  redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
+  purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}
+  orangeMaterialRef: {fileID: 2100000, guid: f825344ca730ef24fa7141ff4025406a, type: 2}
 --- !u!212 &1192347898
 SpriteRenderer:
   m_ObjectHideFlags: 0

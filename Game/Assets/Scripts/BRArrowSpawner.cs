@@ -13,22 +13,33 @@ public class BRArrowSpawner : MonoBehaviour
 
     public float speed;
 
+    Material[] colors = new Material[4];
+    public Material greenMaterialRef;
+    public Material redMaterialRef;
+    public Material purpleMaterialRef;
+    public Material orangeMaterialRef;
+
     void Start()
     {
-        //Первая генерация стрелки с определенной задержкой
+        colors[0] = greenMaterialRef;
+        colors[1] = redMaterialRef;
+        colors[2] = purpleMaterialRef;
+        colors[3] = orangeMaterialRef;
+
+        //РџРµСЂРІР°СЏ РіРµРЅРµСЂР°С†РёСЏ СЃС‚СЂРµР»РєРё СЃ РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ Р·Р°РґРµСЂР¶РєРѕР№
         Invoke("ArrowInstantiate", start_delay);
     }
 
     void FixedUpdate()
     {
-        //Последующие генерации срелки с определенным интервалом 
+        //РџРѕСЃР»РµРґСѓСЋС‰РёРµ РіРµРЅРµСЂР°С†РёРё СЃСЂРµР»РєРё СЃ РѕРїСЂРµРґРµР»РµРЅРЅС‹Рј РёРЅС‚РµСЂРІР°Р»РѕРј 
         timer += Time.deltaTime;
         if (timer >= timing)
         {
             Invoke("ArrowInstantiate", start_delay);
             timer = 0;
         }
-        //Движение стрелки
+        //Р”РІРёР¶РµРЅРёРµ СЃС‚СЂРµР»РєРё
         if (arrow != null)
         {
             arrow.GetComponent<Rigidbody2D>().velocity = new Vector3(Screen.width / -2, Screen.height / 2, 0) * speed;
@@ -37,12 +48,28 @@ public class BRArrowSpawner : MonoBehaviour
 
     void ArrowInstantiate()
     {
-        //Рассчет позиции угла экрана
+        //Р Р°СЃСЃС‡РµС‚ РїРѕР·РёС†РёРё СѓРіР»Р° СЌРєСЂР°РЅР°
         Bounds bounds = GetComponent<SpriteRenderer>().bounds;
         Vector3 bottomLeftPosition = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, Camera.main.nearClipPlane));
         bottomLeftPosition += new Vector3(bounds.size.x / 2, -bounds.size.y / 2, 0);
-        //Генерация стрелки в этой позиции
+        //Р“РµРЅРµСЂР°С†РёСЏ СЃС‚СЂРµР»РєРё РІ СЌС‚РѕР№ РїРѕР·РёС†РёРё
         arrow = Instantiate(arrowPrefab, bottomLeftPosition, Quaternion.Euler(0, 0, -35));
+
+        //Р Р°РЅРґРѕРјРЅРѕРµ РїСЂРёСЃРІР°РёРІР°РЅРёРµ С†РІРµС‚Р° СЃС‚СЂРµР»РєРµ
+        arrow.GetComponent<Renderer>().material = colors[Random.Range(0, colors.Length)];
+        //РџСЂРёСЃРІР°РёРІР°РЅРёРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРіРѕ С‚РµРіР° СЃС‚СЂРµР»РєРµ
+        if (arrow.GetComponent<Renderer>().sharedMaterial == redMaterialRef)
+        {
+            arrow.tag = "Red arrow";
+        }
+        else if (arrow.GetComponent<Renderer>().sharedMaterial == purpleMaterialRef)
+        {
+            arrow.tag = "Purple arrow";
+        }
+        else if (arrow.GetComponent<Renderer>().sharedMaterial == orangeMaterialRef)
+        {
+            arrow.tag = "Orange arrow";
+        }
     }
 }
 

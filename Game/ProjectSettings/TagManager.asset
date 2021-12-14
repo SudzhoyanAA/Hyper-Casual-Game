@@ -10,6 +10,9 @@ TagManager:
   - Purple
   - Orange
   - Green arrow
+  - Red arrow
+  - Purple arrow
+  - Orange arrow
   layers:
   - Default
   - TransparentFX

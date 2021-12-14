@@ -13,8 +13,19 @@ public class TRArrowSpawner : MonoBehaviour
 
     public float speed;
 
+    Material[] colors = new Material[4];
+    public Material greenMaterialRef;
+    public Material redMaterialRef;
+    public Material purpleMaterialRef;
+    public Material orangeMaterialRef;
+
     void Start()
     {
+        colors[0] = greenMaterialRef;
+        colors[1] = redMaterialRef;
+        colors[2] = purpleMaterialRef;
+        colors[3] = orangeMaterialRef;
+
         //Первая генерация стрелки с определенной задержкой
         Invoke("ArrowInstantiate", start_delay);
     }
@@ -43,6 +54,22 @@ public class TRArrowSpawner : MonoBehaviour
         topRightPosition += new Vector3(bounds.size.x / 2, -bounds.size.y / 2, 0);
         //Генерация стрелки в этой позиции
         arrow = Instantiate(arrowPrefab, topRightPosition, Quaternion.Euler(0, 0, 35));
+
+        //Рандомное присваивание цвета стрелке
+        arrow.GetComponent<Renderer>().material = colors[Random.Range(0, colors.Length)];
+        //Присваивание соответствующего тега стрелке
+        if (arrow.GetComponent<Renderer>().sharedMaterial == redMaterialRef)
+        {
+            arrow.tag = "Red arrow";
+        }
+        else if (arrow.GetComponent<Renderer>().sharedMaterial == purpleMaterialRef)
+        {
+            arrow.tag = "Purple arrow";
+        }
+        else if (arrow.GetComponent<Renderer>().sharedMaterial == orangeMaterialRef)
+        {
+            arrow.tag = "Orange arrow";
+        }
     }
 }
 
