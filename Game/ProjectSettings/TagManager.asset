@@ -13,6 +13,7 @@ TagManager:
   - Red arrow
   - Purple arrow
   - Orange arrow
+  - Blue arrow
   layers:
   - Default
   - TransparentFX
