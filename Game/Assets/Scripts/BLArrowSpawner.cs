@@ -36,6 +36,7 @@ public class BLArrowSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timing)
         {
+            speed += 0.003F;
             Invoke("ArrowInstantiate", start_delay);
             timer = 0;
         }
