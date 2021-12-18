@@ -1992,7 +1992,6 @@ GameObject:
   m_Component:
   - component: {fileID: 164308751}
   - component: {fileID: 164308750}
-  - component: {fileID: 164308749}
   - component: {fileID: 164308748}
   - component: {fileID: 164308752}
   m_Layer: 0
@@ -2013,21 +2012,6 @@ SortingGroup:
   m_SortingLayerID: 1786208513
   m_SortingLayer: 1
   m_SortingOrder: 7
---- !u!114 &164308749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164308747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
-  speed: 1
 --- !u!212 &164308750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3458,8 +3442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
+  key: 323
   speed: 2
 --- !u!212 &405998080
 SpriteRenderer:
@@ -4136,8 +4119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
+  key: 323
   speed: 1.2
 --- !u!212 &505832829
 SpriteRenderer:
@@ -7888,8 +7870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
+  key: 323
   speed: 2.2
 --- !u!212 &949804393
 SpriteRenderer:
@@ -9029,8 +9010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
+  key: 323
   speed: 1.4
 --- !u!212 &992249298
 SpriteRenderer:
@@ -14100,8 +14080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
+  key: 323
   speed: 1.6
 --- !u!212 &1445843323
 SpriteRenderer:
@@ -14940,8 +14919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
+  key: 323
   speed: 1.8
 --- !u!212 &1596505746
 SpriteRenderer:
@@ -15229,8 +15207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d180cc1d8a0943b3fcb8ce3b74acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyOne: 97
-  keyTwo: 100
+  key: 323
   speed: 2.4
 --- !u!212 &1651800820
 SpriteRenderer:

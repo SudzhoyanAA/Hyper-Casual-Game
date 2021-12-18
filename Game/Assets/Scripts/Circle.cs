@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class Circle : MonoBehaviour
 {
-    [SerializeField] KeyCode keyOne;
-    [SerializeField] KeyCode keyTwo;
+    [SerializeField] KeyCode key;
     public float speed;
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(keyOne))
-        {
-            transform.Rotate(0, 0, speed);
-        }
-        if (Input.GetKey(keyTwo))
+        if (Input.GetKey(key))
         {
             transform.Rotate(0, 0, -speed);
         }
