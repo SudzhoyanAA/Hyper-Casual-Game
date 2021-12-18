@@ -1912,7 +1912,8 @@ MonoBehaviour:
   arrowPrefab: {fileID: 8427997408139554530, guid: 47128ed643a0d3949a8272d2a8d6e6e2, type: 3}
   start_delay: 6
   timing: 8
-  speed: 0.008
+  speed: 0.014
+  scale: 0.65
   greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
   redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
   purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}
@@ -2288,7 +2289,7 @@ Transform:
   m_GameObject: {fileID: 167655956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1651800821}
   - {fileID: 949804394}
@@ -3577,6 +3578,7 @@ MonoBehaviour:
   start_delay: 0
   timing: 8
   speed: 0.008
+  scale: 0.8
   greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
   redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
   purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}
@@ -9755,7 +9757,8 @@ MonoBehaviour:
   arrowPrefab: {fileID: 8427997408139554530, guid: 47128ed643a0d3949a8272d2a8d6e6e2, type: 3}
   start_delay: 4
   timing: 8
-  speed: 0.008
+  speed: 0.012
+  scale: 0.7
   greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
   redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
   purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}
@@ -10998,7 +11001,8 @@ MonoBehaviour:
   arrowPrefab: {fileID: 8427997408139554530, guid: 47128ed643a0d3949a8272d2a8d6e6e2, type: 3}
   start_delay: 2
   timing: 8
-  speed: 0.008
+  speed: 0.01
+  scale: 0.75
   greenMaterialRef: {fileID: 2100000, guid: 75da351177cb3954fa2f5f995d16f466, type: 2}
   redMaterialRef: {fileID: 2100000, guid: 1c29aaf1be0b92b48bdcf3d07a074ec5, type: 2}
   purpleMaterialRef: {fileID: 2100000, guid: 1ef726006e2323b46ad8c3edfc785739, type: 2}

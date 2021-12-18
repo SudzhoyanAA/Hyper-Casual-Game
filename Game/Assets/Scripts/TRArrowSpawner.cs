@@ -12,6 +12,7 @@ public class TRArrowSpawner : MonoBehaviour
     public float timing;
 
     public float speed;
+    public float scale;
 
     Material[] colors = new Material[4];
     public Material greenMaterialRef;
@@ -36,6 +37,7 @@ public class TRArrowSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timing)
         {
+            speed += 0.003F;
             Invoke("ArrowInstantiate", start_delay);
             timer = 0;
         }
@@ -54,6 +56,10 @@ public class TRArrowSpawner : MonoBehaviour
         topRightPosition += new Vector3(bounds.size.x / 2, -bounds.size.y / 2, 0);
         //Генерация стрелки в этой позиции
         arrow = Instantiate(arrowPrefab, topRightPosition, Quaternion.Euler(0, 0, 35));
+
+        //Изменение размера стрелки
+        arrow.transform.localScale = new Vector3(scale, scale, scale);
+        scale -= 0.2f;
 
         //Рандомное присваивание цвета стрелке
         arrow.GetComponent<Renderer>().material = colors[Random.Range(0, colors.Length)];
