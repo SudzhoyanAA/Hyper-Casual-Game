@@ -12,6 +12,7 @@ public class TLArrowSpawner : MonoBehaviour
     public float timing;
 
     public float speed;
+    public float scale;
 
     Material[] colors = new Material[4];
     public Material greenMaterialRef;
@@ -55,6 +56,10 @@ public class TLArrowSpawner : MonoBehaviour
         topLeftPosition += new Vector3(bounds.size.x / 2, -bounds.size.y / 2, 0);
         //Генерация стрелки в этой позиции
         arrow = Instantiate(arrowPrefab, topLeftPosition, Quaternion.Euler(0, 0, -35));
+
+        //Изменение размера стрелки
+        arrow.transform.localScale = new Vector3(scale, scale, scale);
+        scale -= 0.2f;
 
         //Рандомное присваивание цвета стрелке
         arrow.GetComponent<Renderer>().material = colors[Random.Range(0, colors.Length)];
