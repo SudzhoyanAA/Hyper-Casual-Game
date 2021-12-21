@@ -10,9 +10,12 @@ public class TLArrowSpawner : MonoBehaviour
     private float timer = 0;
     public float start_delay;
     public float timing;
+    private int count = 0;
 
     public float speed;
     public float scale;
+
+    Vector3 screenCenter;
 
     Material[] colors = new Material[4];
     public Material greenMaterialRef;
@@ -26,7 +29,8 @@ public class TLArrowSpawner : MonoBehaviour
         colors[1] = redMaterialRef;
         colors[2] = purpleMaterialRef;
         colors[3] = orangeMaterialRef;
-
+        //Рассчет позиции центра экрана
+        screenCenter = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10f));
         //Первая генерация стрелки с определенной задержкой
         Invoke("ArrowInstantiate", start_delay);
     }
@@ -35,16 +39,17 @@ public class TLArrowSpawner : MonoBehaviour
     {
         //Последующие генерации срелки с определенным интервалом
         timer += Time.deltaTime;
-        if (timer >= timing)
+        if (count < 1 && GameObject.FindGameObjectsWithTag("Green arrow").Length == 0 && GameObject.FindGameObjectsWithTag("Red arrow").Length == 0 && GameObject.FindGameObjectsWithTag("Purple arrow").Length == 0 && GameObject.FindGameObjectsWithTag("Orange arrow").Length == 0 && timer >= 1)
         {
-            speed += 0.003F;
-            Invoke("ArrowInstantiate", start_delay);
+            speed += 0.08F;
+            Invoke("ArrowInstantiate", 0);
             timer = 0;
+            count += 1;
         }
         //Движение стрелки
         if (arrow != null)
         {
-            arrow.GetComponent<Rigidbody2D>().velocity = new Vector3(Screen.width / 2, Screen.height / -2, 0) * speed;
+            arrow.transform.position = Vector3.MoveTowards(arrow.transform.position, screenCenter, speed);
         }
     }
 
