@@ -12,6 +12,9 @@ public class BRArrowSpawner : MonoBehaviour
     public float timing;
 
     public float speed;
+    public float scale;
+
+    Vector3 screenCenter;
 
     Material[] colors = new Material[4];
     public Material greenMaterialRef;
@@ -25,7 +28,8 @@ public class BRArrowSpawner : MonoBehaviour
         colors[1] = redMaterialRef;
         colors[2] = purpleMaterialRef;
         colors[3] = orangeMaterialRef;
-
+        //Рассчет позиции центра экрана
+        screenCenter = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10f));
         //Первая генерация стрелки с определенной задержкой
         Invoke("ArrowInstantiate", start_delay);
     }
@@ -34,15 +38,16 @@ public class BRArrowSpawner : MonoBehaviour
     {
         //Последующие генерации срелки с определенным интервалом 
         timer += Time.deltaTime;
-        if (timer >= timing)
+        if (GameObject.FindGameObjectsWithTag("Green arrow").Length == 0 && GameObject.FindGameObjectsWithTag("Red arrow").Length == 0 && GameObject.FindGameObjectsWithTag("Purple arrow").Length == 0 && GameObject.FindGameObjectsWithTag("Orange arrow").Length == 0 && timer >= 1)
         {
-            Invoke("ArrowInstantiate", start_delay);
+            speed += 0.08F;
+            Invoke("ArrowInstantiate", 1);
             timer = 0;
         }
         //Движение стрелки
         if (arrow != null)
         {
-            arrow.GetComponent<Rigidbody2D>().velocity = new Vector3(Screen.width / -2, Screen.height / 2, 0) * speed;
+            arrow.transform.position = Vector3.MoveTowards(arrow.transform.position, screenCenter, speed);
         }
     }
 
@@ -54,6 +59,10 @@ public class BRArrowSpawner : MonoBehaviour
         bottomLeftPosition += new Vector3(bounds.size.x / 2, -bounds.size.y / 2, 0);
         //Генерация стрелки в этой позиции
         arrow = Instantiate(arrowPrefab, bottomLeftPosition, Quaternion.Euler(0, 0, -35));
+
+        //Изменение размера стрелки
+        arrow.transform.localScale = new Vector3(scale, scale, scale);
+        scale -= 0.2f;
 
         //Рандомное присваивание цвета стрелке
         arrow.GetComponent<Renderer>().material = colors[Random.Range(0, colors.Length)];

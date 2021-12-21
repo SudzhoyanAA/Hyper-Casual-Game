@@ -1,9 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Arrow : MonoBehaviour
 {
+    public Material blueMaterialRef;
+
+    void FixedUpdate()
+    {
+        //Замена стрелок на голубые, если уничтожены все кольца
+        if (GameObject.Find("Circle").transform.childCount == 1)
+        {
+            this.GetComponent<Renderer>().material = blueMaterialRef;
+            this.tag = "Blue arrow";
+        }
+    }
+
     //Взаимодействие стрелок с цветами
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -54,6 +67,12 @@ public class Arrow : MonoBehaviour
             {
                 Destroy(GameObject.FindGameObjectWithTag("Orange arrow"));
             }
+        }
+        if (this.tag == "Blue arrow")
+        {
+            Debug.Log("Победа!");
+            Destroy(GameObject.FindGameObjectWithTag("Blue arrow"));
+            SceneManager.LoadScene(2);
         }
     }
 }
